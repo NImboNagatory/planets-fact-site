@@ -91,6 +91,11 @@ table {
     line-height: 25px; /* 227.273% */
     letter-spacing: 1px;
     text-transform: uppercase;
+    opacity: 0.75;
+    cursor: pointer;
+}
+.planet__container > h1:hover{
+    opacity: 1;
 }
 
 .overview{

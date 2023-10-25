@@ -2,6 +2,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const dotContainer = document.getElementById("dot-container");
   const navLinks = document.querySelectorAll("nav > div > h1");
 
+
+  const json_adress = "./data.json";
+  fetch(json_adress)
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error("HTTP error, status = " + response.status);
+      }
+      return response.json(); // Parse the response as JSON
+    })
+    .then(function (jsonData) {
+      // Now, you can work with the JSON data
+      const planetData = jsonData;
+      const planet = planetData.find(
+        (planet) => planet.name === "Mercury"
+      );
+
+      if (planet) {
+        // Display the information for the selected planet
+        updateMainComponent(planet);
+        console.log(planet);
+      }
+      
+    })
+    .catch(function (error) {
+      console.error("Error: " + error);
+    });
+
+
+
+
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -69,6 +99,7 @@ function updateMainComponent(planetData) {
   const radius = mainElement.querySelector(".radius h1");
   const averageTemp = mainElement.querySelector(".average_temp h1");
   const planetImage = planetInfo.querySelector(".planet__container img");
+  const planet_geology = document.getElementById("planet_geology")
 
   const planet_overview_btn = document.getElementById("overview")
   const planet_structure_btn = document.getElementById("sructure")
@@ -86,6 +117,7 @@ function updateMainComponent(planetData) {
   radius.textContent = planetData.radius;
   averageTemp.textContent = planetData.temperature;
   planetImage.src = planetData.images.planet;
+  planet_geology.style = "display:none;"
 }
 
 function changeData(section, planet_name) { 
@@ -96,6 +128,8 @@ function changeData(section, planet_name) {
     const planetName = planetInfo.querySelector("h1");
     const planetContent = planetInfo.querySelector('p');
     const planetLink = document.getElementById("data_link")
+    const planetImage = planetInfo.querySelector(".planet__container img");
+    const planet_geology = document.getElementById("planet_geology")
 
     const json_adress = "./data.json";
     fetch(json_adress)
@@ -116,14 +150,20 @@ function changeData(section, planet_name) {
           // Display the information for the selected planet
           console.log((planet) => planet.name === planet_name);
           if (section === 'overview') {
+            planet_geology.style = "display:none;"
+            planetImage.src = planet.images.planet;
             planetName.textContent = planet.name;
             planetContent.textContent = planet.overview.content;
             planetLink.href = planet.overview.source;
           } else if (section === 'internal_structure') {
+            planet_geology.style = "display:none;"
+            planetImage.src = planet.images.internal;
             planetName.textContent = planet.name;
             planetContent.textContent = planet.structure.content;
             planetLink.href = planet.structure.source;
           } else if (section === 'surface_geology') {
+            planet_geology.style = `display:block; background: url("${planet.images.geology}"); background-size: contain; background-repeat: no-repeat;background-position: center; `
+            planetImage.src = planet.images.planet;
             planetName.textContent = planet.name;
             planetContent.textContent = planet.geology.content;
             planetLink.href = planet.geology.source;

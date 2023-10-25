@@ -133,13 +133,13 @@ table {
     border-top-color: #D83A34;;
 }
 .planet_nav_container > h1:nth-child(6):hover::before{
-    border-top-color: #1EC1A2;
-}
-.planet_nav_container > h1:nth-child(7):hover::before{
     border-top-color: #CD5120;
 }
-.planet_nav_container > h1:nth-child(8):hover::before{
+.planet_nav_container > h1:nth-child(7):hover::before{
     border-top-color: #1EC1A2;
+}
+.planet_nav_container > h1:nth-child(8):hover::before{
+    border-top-color: #2D68F0;
 }
 .overview {
     height: 100%;

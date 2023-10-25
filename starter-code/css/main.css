@@ -185,17 +185,18 @@ table {
         opacity: 0.5; /* Dots end fully opaque */
     }
 }
-.component{
+
+.planet_full_info{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
 
 .planet__container{
-    width: 290px;
-    height: 290px;
+    width: 320px;
+    height: 320px;
     flex-shrink: 0;
-    margin-top: 16.6328125%;
+    margin-top: 11.6328125%;
     margin-left: 23.26388888888889%;
 }
 .planet__container > img{
@@ -252,12 +253,14 @@ table {
     width: 350px;
     height: 48px;
     flex-shrink: 0;
-    border: 1px solid #FFF;
-    opacity: 0.2;
+    border: 1px solid rgba(255, 255, 255, 0.2);;
     display: flex;
     align-items: center;
     gap: 28px;
     cursor: pointer;
+}
+.planet_info__contaner > div:hover{
+    background-color: #419EBB;
 }
 .planet__overview > h2{
     margin-left: 28px;
@@ -287,8 +290,7 @@ table {
     width: 350px;
     height: 48px;
     flex-shrink: 0;
-    border: 1px solid #FFF;
-    opacity: 0.2;
+    border: 1px solid rgba(255, 255, 255, 0.2);;
     display: flex;
     align-items: center;
     gap: 28px;
@@ -322,8 +324,7 @@ table {
     width: 350px;
     height: 48px;
     flex-shrink: 0;
-    border: 1px solid #FFF;
-    opacity: 0.2;
+    border: 1px solid rgba(255, 255, 255, 0.2);;
     display: flex;
     align-items: center;
     gap: 28px;
@@ -349,5 +350,44 @@ table {
     font-weight: 700;
     line-height: 25px; /* 208.333% */
     letter-spacing: 2.571px;
+    text-transform: uppercase;
+}
+
+.planet__details__container{
+    margin-top: 87px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.planet__details__container > div{
+    padding-top: 20px;
+    padding-left: 23px;
+    width: 325px;
+    height: 110px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);;
+}
+
+.planet__details__container > div > h2{
+    color: #FFF;
+    font-family: Spartan;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px; /* 227.273% */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+.planet__details__container > div > h1{
+    margin-top: 4px;
+    color: #FFF;
+    font-family: Antonio;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.5px;
     text-transform: uppercase;
 }

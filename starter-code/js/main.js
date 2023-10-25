@@ -1,4 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
+    var imageUrls = [
+        './assets/planet-mercury.svg',
+        './assets/planet-mercury-internal.svg',
+        './assets/geology-mercury.png',
+        './assets/planet-venus.svg',
+        './assets/planet-venus-internal.svg',
+        './assets/geology-venus.png',
+        './assets/planet-earth.svg',
+        './assets/planet-earth-internal.svg',
+        './assets/geology-earth.png',
+        './assets/planet-mars.svg',
+        './assets/planet-mars-internal.svg',
+        './assets/geology-mars.png',
+        './assets/planet-jupiter.svg',
+        './assets/planet-jupiter-internal.svg',
+        './assets/geology-jupiter.png',
+        './assets/planet-saturn.svg',
+        './assets/planet-saturn-internal.svg',
+        './assets/geology-saturn.png',
+        './assets/planet-uranus.svg',
+        './assets/planet-uranus-internal.svg',
+        './assets/geology-uranus.png',
+        './assets/planet-neptune.svg',
+        './assets/planet-neptune-internal.svg',
+        './assets/geology-neptune.png'
+    ];
+
+    for (var i = 0; i < imageUrls.length; i++) {
+        var img = new Image();
+        img.src = imageUrls[i];
+    }
+
+
+
   const dotContainer = document.getElementById("dot-container");
   const navLinks = document.querySelectorAll("nav > div > h1");
 

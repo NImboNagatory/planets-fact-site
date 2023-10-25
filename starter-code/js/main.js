@@ -195,7 +195,6 @@ function changeData(section, planet_name) {
 
         if (planet) {
           // Display the information for the selected planet
-          console.log((planet) => planet.name === planet_name);
           if (section === 'overview') {
             planet_geology.style = "display:none;"
             planetImage.src = planet.images.planet;

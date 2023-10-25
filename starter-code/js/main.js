@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   const dotContainer = document.getElementById("dot-container");
-  const planetInfo = document.getElementById("planet-info");
   const navLinks = document.querySelectorAll("nav > div > h1");
 
   navLinks.forEach((link) => {
@@ -61,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function updateMainComponent(planetData) {
   const mainElement = document.querySelector(".overview");
   const planetInfo = mainElement.querySelector(".planet_full_info");
+  const planetLink = document.getElementById("data_link")
   const planetName = planetInfo.querySelector("h1");
   const planetOverview = planetInfo.querySelector("p");
   const rotationTime = mainElement.querySelector(".rotation_time h1");
@@ -70,7 +70,8 @@ function updateMainComponent(planetData) {
   const planetImage = planetInfo.querySelector(".planet__container img");
 
   planetName.textContent = planetData.name;
-  planetOverview.textContent = planetData.overview;
+  planetOverview.textContent = planetData.overview.content;
+  planetLink.href = planetData.overview.source;
   rotationTime.textContent = planetData.rotation;
   revolutionTime.textContent = planetData.revolution;
   radius.textContent = planetData.radius;

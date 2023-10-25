@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
         dot.style.top = `${y}px`;
 
         dotContainer.appendChild(dot);
-        console.log("i ran");
     }
 
 });

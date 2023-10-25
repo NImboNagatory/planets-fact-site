@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  const numDots = 200; // You can adjust the number of dots.
+  const numDots = 180; // You can adjust the number of dots.
 
   for (let i = 0; i < numDots; i++) {
     const dot = document.createElement("div");
@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function updateMainComponent(planetData) {
   const mainElement = document.querySelector(".overview");
   const planetInfo = mainElement.querySelector(".planet_full_info");
+  const dataColor = mainElement.querySelectorAll(".planet_info__contaner > div")
   const planetLink = document.getElementById("data_link")
   const planetName = planetInfo.querySelector("h1");
   const planetOverview = planetInfo.querySelector("p");
@@ -105,7 +106,19 @@ function updateMainComponent(planetData) {
   const planet_structure_btn = document.getElementById("sructure")
   const planet_geology_btn = document.getElementById("geology")
   
-  
+
+  dataColor.forEach(item => {
+    item.addEventListener('mouseover', function () {
+        item.style.backgroundColor = `${planetData.color}`;
+    });
+
+    // Add a mouseout event listener to revert to the original style when the mouse leaves
+    item.addEventListener('mouseout', function () {
+        item.style.backgroundColor = '';
+    });
+});
+
+
   planet_overview_btn.setAttribute("onclick", "changeData('overview'," + "'" +(planetData.name).toString() + "'" + ")");
   planet_structure_btn.setAttribute("onclick", "changeData('internal_structure'," + "'" + (planetData.name).toString()+ "'" + ")");
   planet_geology_btn.setAttribute("onclick", "changeData('surface_geology'," + "'" + (planetData.name).toString()+ "'" + ")")

@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateMainComponent(planet);
             console.log(planet);
           }
+          
         })
         .catch(function (error) {
           console.error("Error: " + error);
@@ -69,6 +70,14 @@ function updateMainComponent(planetData) {
   const averageTemp = mainElement.querySelector(".average_temp h1");
   const planetImage = planetInfo.querySelector(".planet__container img");
 
+  const planet_overview_btn = document.getElementById("overview")
+  const planet_structure_btn = document.getElementById("sructure")
+  const planet_geology_btn = document.getElementById("geology")
+  
+  
+  planet_overview_btn.setAttribute("onclick", "changeData('overview'," + "'" +(planetData.name).toString() + "'" + ")");
+  planet_structure_btn.setAttribute("onclick", "changeData('internal_structure'," + "'" + (planetData.name).toString()+ "'" + ")");
+  planet_geology_btn.setAttribute("onclick", "changeData('surface_geology'," + "'" + (planetData.name).toString()+ "'" + ")")
   planetName.textContent = planetData.name;
   planetOverview.textContent = planetData.overview.content;
   planetLink.href = planetData.overview.source;
@@ -78,3 +87,58 @@ function updateMainComponent(planetData) {
   averageTemp.textContent = planetData.temperature;
   planetImage.src = planetData.images.planet;
 }
+
+function changeData(section, planet_name) { 
+    // Replace with data for the selected planet
+
+    const mainElement = document.querySelector('.overview');
+    const planetInfo = mainElement.querySelector(".planet_full_info");
+    const planetName = planetInfo.querySelector("h1");
+    const planetContent = planetInfo.querySelector('p');
+    const planetLink = document.getElementById("data_link")
+
+    const json_adress = "./data.json";
+    fetch(json_adress)
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("HTTP error, status = " + response.status);
+        }
+        return response.json(); // Parse the response as JSON
+      })
+      .then(function (jsonData) {
+        // Now, you can work with the JSON data
+        const planetData = jsonData;
+        const planet = planetData.find(
+          (planet) => planet.name === planet_name
+        );
+
+        if (planet) {
+          // Display the information for the selected planet
+          console.log((planet) => planet.name === planet_name);
+          if (section === 'overview') {
+            planetName.textContent = planet.name;
+            planetContent.textContent = planet.overview.content;
+            planetLink.href = planet.overview.source;
+          } else if (section === 'internal_structure') {
+            planetName.textContent = planet.name;
+            planetContent.textContent = planet.structure.content;
+            planetLink.href = planet.structure.source;
+          } else if (section === 'surface_geology') {
+            planetName.textContent = planet.name;
+            planetContent.textContent = planet.geology.content;
+            planetLink.href = planet.geology.source;
+          }
+
+        }
+        
+      })
+      .catch(function (error) {
+        console.error("Error: " + error);
+      });
+  
+    
+  
+    
+  
+    // Add more conditions for other sections if needed
+  }

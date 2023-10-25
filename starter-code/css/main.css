@@ -237,7 +237,7 @@ table {
 .planet_info__contaner > p{
     margin-top: 23px;
     color: #FFF;
-    font-family: Spartan;
+    font-family: League Spartan;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -247,7 +247,7 @@ table {
 }
 .planet_info__contaner > h3{
     color: #FFF;
-    font-family: Spartan;
+    font-family: League Spartan;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -257,7 +257,7 @@ table {
 .planet_info__contaner > h3 > a{
     opacity: 0.5;
     color: #FFF;
-    font-family: Spartan;
+    font-family: League Spartan;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -279,7 +279,7 @@ table {
 .planet__overview > h2{
     margin-left: 28px;
     color: #FFF;
-    font-family: Spartan;
+    font-family: League Spartan;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -290,7 +290,7 @@ table {
 }
 .planet__overview > h1{
     color: #FFF;
-    font-family: Spartan;
+    font-family: League Spartan;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -313,7 +313,7 @@ table {
 .surface_geology > h2{
     margin-left: 28px;
     color: #FFF;
-    font-family: Spartan;
+    font-family: League Spartan;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -324,7 +324,7 @@ table {
 }
 .surface_geology > h1{
     color: #FFF;
-    font-family: Spartan;
+    font-family: League Spartan;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -347,7 +347,7 @@ table {
 .internal_sructure > h2{
     margin-left: 28px;
     color: #FFF;
-    font-family: Spartan;
+    font-family: League Spartan;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -358,7 +358,7 @@ table {
 }
 .internal_sructure > h1{
     color: #FFF;
-    font-family: Spartan;
+    font-family: League Spartan;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -385,7 +385,7 @@ table {
 
 .planet__details__container > div > h2{
     color: #FFF;
-    font-family: Spartan;
+    font-family: League Spartan;
     font-size: 11px;
     font-style: normal;
     font-weight: 700;

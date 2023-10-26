@@ -141,6 +141,10 @@ function updateMainComponent(planetData) {
   const planet_geology_btn = document.getElementById("geology")
   
 
+  const planet_overview_btn_mobile = document.getElementById("overview_mobile")
+  const planet_structure_btn_mobile = document.getElementById("sructure_mobile")
+  const planet_geology_btn_mobile = document.getElementById("geology_mobile")
+
   dataColor.forEach(item => {
     item.addEventListener('mouseover', function () {
         item.style.backgroundColor = `${planetData.color}`;
@@ -156,6 +160,11 @@ function updateMainComponent(planetData) {
   planet_overview_btn.setAttribute("onclick", "changeData('overview'," + "'" +(planetData.name).toString() + "'" + ")");
   planet_structure_btn.setAttribute("onclick", "changeData('internal_structure'," + "'" + (planetData.name).toString()+ "'" + ")");
   planet_geology_btn.setAttribute("onclick", "changeData('surface_geology'," + "'" + (planetData.name).toString()+ "'" + ")")
+
+  planet_overview_btn_mobile.setAttribute("onclick", "changeData('overview'," + "'" +(planetData.name).toString() + "'" + ")");
+  planet_structure_btn_mobile.setAttribute("onclick", "changeData('internal_structure'," + "'" + (planetData.name).toString()+ "'" + ")");
+  planet_geology_btn_mobile.setAttribute("onclick", "changeData('surface_geology'," + "'" + (planetData.name).toString()+ "'" + ")")
+
   planetName.textContent = planetData.name;
   planetOverview.textContent = planetData.overview.content;
   planetLink.href = planetData.overview.source;

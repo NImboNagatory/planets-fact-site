@@ -35,8 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const dotContainer = document.getElementById("dot-container");
   const navLinks = document.querySelectorAll(".norm_nav > h1");
+  const burgerMenu = document.getElementById("burgerMenu")
 
-
+  burgerMenu.addEventListener('click', (e) => {
+    
+  }); 
   const json_adress = "./data.json";
   fetch(json_adress)
     .then(function (response) {

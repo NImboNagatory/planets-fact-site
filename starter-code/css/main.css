@@ -735,4 +735,18 @@ table {
         width: 90px;
         margin-left: 12px;
     }
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 3px 0;
+        transition: 0.4s;
+    }
+    .burger_menu{
+        cursor: pointer;
+        opacity: 0.5;
+    }
+    .burger_menu:hover{
+        opacity: 1;
+    }
 }

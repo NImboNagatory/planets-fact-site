@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function updateMainComponent(planetData) {
   const mainElement = document.querySelector(".overview");
   const planetInfo = mainElement.querySelector(".planet_full_info");
-  const dataColor = mainElement.querySelectorAll(".planet_info__contaner > div")
+  const dataColor = mainElement.querySelectorAll(".planet_data__color > div")
   const planetLink = document.getElementById("data_link")
   const planetName = planetInfo.querySelector("h1");
   const planetOverview = planetInfo.querySelector("p");

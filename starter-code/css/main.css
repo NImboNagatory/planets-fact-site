@@ -58,6 +58,7 @@ table {
 
 .planets__nav{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -188,6 +189,7 @@ table {
 
 .planet_full_info{
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
 }
@@ -221,11 +223,10 @@ table {
 }
 
 .planet_info__contaner{
-    width: 350px;
     margin-top: 5.3046875%;
     margin-right: 11.458333333333332%;
 }
-.planet_info__contaner > h1{
+.planet_info__contaner > div:nth-child(1) > h1{
     color: #FFF;
     font-family: Antonio;
     font-size: 80px;
@@ -234,7 +235,7 @@ table {
     line-height: normal;
     text-transform: uppercase;
 }
-.planet_info__contaner > p{
+.planet_info__contaner > div:nth-child(1) > p{
     margin-top: 23px;
     color: #FFF;
     font-family: League Spartan;
@@ -245,7 +246,7 @@ table {
     width: 350px;
     height: 150px;
 }
-.planet_info__contaner > h3{
+.planet_info__contaner > div:nth-child(1) > h3{
     color: #FFF;
     font-family: League Spartan;
     font-size: 14px;
@@ -254,7 +255,7 @@ table {
     line-height: 25px; /* 178.571% */
     opacity: 0.5;
 }
-.planet_info__contaner > h3 > a{
+.planet_info__contaner > div:nth-child(1) > h3 > a{
     opacity: 0.5;
     color: #FFF;
     font-family: League Spartan;
@@ -377,7 +378,7 @@ table {
 .planet__details__container > div{
     padding-top: 20px;
     padding-left: 23px;
-    width: 325px;
+    width: 16.8%;
     height: 110px;
     flex-shrink: 0;
     border: 1px solid rgba(255, 255, 255, 0.2);;
@@ -404,4 +405,157 @@ table {
     line-height: normal;
     letter-spacing: -1.5px;
     text-transform: uppercase;
+}
+
+
+@media only screen and (max-width: 1130px){
+    .main__container{
+        overflow: auto;
+    }
+
+    .header_logo > h1{
+        margin-top: 22px;
+        color: #FFF;
+        font-family: Antonio;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -1.05px;
+        text-transform: uppercase;
+    }
+    .planet_nav_container > h1{
+        color: #FFF;
+        font-family: League Spartan;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 25px; /* 227.273% */
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .planets__nav{
+        flex-direction: column;
+        justify-content: space-between;
+        height: 15.52734375%;
+    }
+    .planet_nav_container{
+        margin-right: 0;
+        margin-bottom: 27px;
+    }
+    .planet_full_info{
+        flex-direction: column;
+    }
+    .planet__container{
+        width: 184px;
+        height: 184px;
+        flex-shrink: 0;
+        margin-top: 28.2578125%;
+        margin-left: 38.15104166666667%;
+    }
+    .planet_geology{
+        margin-left: 14px;
+        margin-bottom: -110px;
+    }
+    .planet_info__contaner{
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        gap: 69px;
+        margin-top: 12.6953125%;
+        justify-content: center;
+    }
+    .planet_info__contaner > div:nth-child(1) > h1 {
+        color: #FFF;
+        font-family: Antonio;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+    .planet_info__contaner > div:nth-child(1) > p {
+        color: #FFF;
+        font-family: League Spartan;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px; /* 200% */
+        height: 110px;
+    }
+    .planet_info__contaner > div:nth-child(1) > h3 {
+        color: #FFF;
+        font-family: League Spartan;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25px; /* 208.333% */
+    }
+    .planet_info__contaner > div:nth-child(1) > h3 > a{
+        opacity: 0.5;
+        color: #FFF;
+        font-family: League Spartan;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 25px;
+        text-decoration-line: underline;
+    }
+    .planet_data__color > div{
+        width: 281px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+    .planet_data__color > div > h1{
+        color: #FFF;
+        font-family: League Spartan;
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 25px; /* 277.778% */
+        letter-spacing: 1.929px;
+        text-transform: uppercase;
+    }
+    .planet_data__color > div > h2{
+        color: #FFF;
+        font-family: Spartan;
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 25px; /* 277.778% */
+        letter-spacing: 1.929px;
+        text-transform: uppercase;
+        opacity: 0.5;
+    }
+    .planet__details__container > div{
+        height: 88px;
+    }
+    .planet__details__container > div > h2{
+        color: #FFF;
+        opacity: 0.5;
+        font-family: League Spartan;
+        font-size: 8px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 16px; /* 200% */
+        letter-spacing: 0.727px;
+        text-transform: uppercase;
+    }
+    .planet__details__container > div > h1{
+        color: #FFF;
+        font-family: Antonio;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.9px;
+        text-transform: uppercase;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .main__container{
+        overflow: auto;
+    }
 }

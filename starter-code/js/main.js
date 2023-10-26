@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   const dotContainer = document.getElementById("dot-container");
-  const navLinks = document.querySelectorAll("nav > div > h1");
+  const navLinks = document.querySelectorAll(".norm_nav > h1");
 
 
   const json_adress = "./data.json";

@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mobilePlanetdetail.style = "display:none;"
     }
   });
+  
   const dotContainer = document.getElementById("dot-container");
   const navLinks = document.querySelectorAll(".norm_nav > h1");
   const mobilenavLinks = document.querySelectorAll(".mobile__planet_navigation > h1")
@@ -90,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", function (e) {
       links.forEach((link) => {
         link.classList.remove("active_nav");
+        burgerMenu.classList.remove("active");
       });
       this.classList.add("active_nav");
     });
@@ -149,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateMainComponent(planet);
             mobileNav.style = "display:none"
             mobilePlanetdetail.style = "display:flex;"
+            burgerMenu.classList.remove("active");
             console.log(planet);
           }
         })

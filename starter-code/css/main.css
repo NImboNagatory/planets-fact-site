@@ -57,6 +57,9 @@ table {
 .mobile__planet_navigation{
     display: none;
 }
+.planet_data__color_mobile{
+    display: none;
+}
 
 .planets__nav{
     display: flex;

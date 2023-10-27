@@ -48,7 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
         mobilePlanetdetail.style = "display:none;"
     }
   });
-  
+  onresize = (event) => {
+    mobileNav.style = "display:none;"
+  };
   const dotContainer = document.getElementById("dot-container");
   const navLinks = document.querySelectorAll(".norm_nav > h1");
   const mobilenavLinks = document.querySelectorAll(".mobile__planet_navigation > h1")

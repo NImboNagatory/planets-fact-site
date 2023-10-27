@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   const dotContainer = document.getElementById("dot-container");
   const navLinks = document.querySelectorAll(".norm_nav > h1");
+  const mobilenavLinks = document.querySelectorAll(".mobile__planet_navigation > h1")
 
   burgerMenu.addEventListener("click", (e) => {});
   const json_adress = "./data.json";
@@ -124,7 +125,38 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
   });
+  mobilenavLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const selectedPlanet = e.target.getAttribute("data-planet");
+      const json_adress = "./data.json";
+      fetch(json_adress)
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("HTTP error, status = " + response.status);
+          }
+          return response.json(); // Parse the response as JSON
+        })
+        .then(function (jsonData) {
+          // Now, you can work with the JSON data
+          const planetData = jsonData;
+          const planet = planetData.find(
+            (planet) => planet.name === selectedPlanet
+          );
 
+          if (planet) {
+            // Display the information for the selected planet
+            updateMainComponent(planet);
+            mobileNav.style = "display:none"
+            mobilePlanetdetail.style = "display:flex;"
+            console.log(planet);
+          }
+        })
+        .catch(function (error) {
+          console.error("Error: " + error);
+        });
+    });
+  });
   const numDots = 180; // You can adjust the number of dots.
 
   for (let i = 0; i < numDots; i++) {

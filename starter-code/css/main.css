@@ -54,7 +54,9 @@ table {
     background: #070724;
     overflow: hidden;
 }
-
+.mobile__planet_navigation{
+    display: none;
+}
 
 .planets__nav{
     display: flex;
@@ -443,6 +445,9 @@ table {
 
 
 @media only screen and (max-width: 1130px){
+    .mobile__planet_navigation{
+        display: none;
+    }
     .main__container{
         overflow: auto;
     }
@@ -695,7 +700,7 @@ table {
     }
     .mobile__planet_navigation{
         position:absolute;
-        max-width: 100%;
+        max-width: 83%;
         width: 100%;
         max-height: 100%;
         height: 100%;
@@ -715,6 +720,42 @@ table {
 }
 .active_nav::before{
     border-top-color: #419EBB;
+}
+.mobile__planet_navigation{
+    display: none;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 64px;
+    padding-left: 26px;
+    padding-right: 32px;
+}
+.deviding_line{
+    width: 327px;
+    height: 1px;
+    flex-shrink: 0;
+    opacity: 0.1;
+    background: #FFF;
+}
+.mobile__planet_navigation > h1{
+    color: #FFF;
+    text-align: center;
+    font-family: League Spartan;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px; /* 166.667% */
+    letter-spacing: 1.364px;
+    text-transform: uppercase;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.mobile__planet_navigation > h1 > span{
+    margin-left: 25px;
+}
+.mobile__planet_navigation > h1 > svg:nth-child(3){
+    margin-left: auto;
 }
 @media only screen and (max-width: 700px){
     .main__container{

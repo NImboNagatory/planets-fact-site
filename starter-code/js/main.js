@@ -31,9 +31,25 @@ document.addEventListener("DOMContentLoaded", function () {
     img.src = imageUrls[i];
   }
 
+  const burgerMenu = document.getElementById("burgerMenu");
+  const mobileNav = document.getElementById("mobile__planet_navigation")
+  const mobilePlanetdetail = document.getElementById("mobile_navigation_container")
+
+  burgerMenu.addEventListener("click", () => {
+      if (burgerMenu.classList.contains("active")) {
+        // If the burger menu is currently active, deactivate it
+        burgerMenu.classList.remove("active");
+        mobileNav.style = "display:none"
+        mobilePlanetdetail.style = "display:flex;"
+    } else {
+        // If the burger menu is not active, activate it
+        burgerMenu.classList.toggle("active");
+        mobileNav.style = "display:flex"
+        mobilePlanetdetail.style = "display:none;"
+    }
+  });
   const dotContainer = document.getElementById("dot-container");
   const navLinks = document.querySelectorAll(".norm_nav > h1");
-  const burgerMenu = document.getElementById("burgerMenu");
 
   burgerMenu.addEventListener("click", (e) => {});
   const json_adress = "./data.json";
